@@ -1,14 +1,10 @@
-let express = require('express');
-let app = express();
-let ejs = require('ejs');
-const haikus = require('./haikus.json');
-const port = process.env.PORT || 3000;
+module.exports = function bionicReader(text,formatter) {
+    formatter = formatter || module.exports.html
+    return text.replace(/[A-Za-z']+/g,(word) => {
+        var boldChars = word.length - (word.length > 4 ? 2 : 1);
+        return formatter(word.substr(0,boldChars), word.substr(boldChars))
+    })
+}
 
-app.use(express.static('public'))
-app.set('view engine', 'ejs');
-
-app.get('/', (req, res) => {
-  res.render('index', {haikus: haikus});
-});
-
-app.listen(port);
+module.exports.html = (boldText, regularText) => (boldText ? "<b>" + boldText + "</b>" : "") + regularText;
+module.exports.md   = (boldText, regularText) => (boldText ? "**"  + boldText + "**"   : "") + regularText;
