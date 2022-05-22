@@ -1,6 +1,6 @@
 {
-  "name": "bionicreading",
-  "version": "1.0.0",
+  "name": "@taylorrobinson/bionicreading",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {

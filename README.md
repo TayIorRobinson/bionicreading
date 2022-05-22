@@ -7,9 +7,9 @@ A reimplementation of the [bionic-reading.com](https://bionic-reading.com) API, 
 ### Basic
 ```js
 // CJS
-const bionic = require("bionicreading");
+const bionic = require("@taylorrobinson/bionicreading");
 // ESM
-import * as bionic from "bionicreading";
+import * as bionic from "@taylorrobinson/bionicreading";
 
 console.log(bionic("The quick brown fox jumps over the lazy dog"));
 ```
