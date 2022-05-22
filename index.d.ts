@@ -5,4 +5,4 @@ declare const bionicReader: {
     html: Formatter;
     md: Formatter;
 } 
-export default bionicReader;
+export = bionicReader;
